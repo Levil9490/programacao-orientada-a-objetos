@@ -4,6 +4,12 @@ public class Livro {
 	private int codigo, quantidade;
 	private String nome, descricao;
 	
+	public Livro(String nome, String descricao, int quantidade) {
+		this.setNome(nome);
+		this.setDescricao(descricao);
+		this.setQuantidade(quantidade);
+	}
+	
 	public int getCodigo() {
 		return codigo;
 	}
