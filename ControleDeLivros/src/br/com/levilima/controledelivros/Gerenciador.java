@@ -19,4 +19,12 @@ public class Gerenciador {
 			++this.id;
 		}
 	}
+	
+	public String listarLivros() {
+		String conteudo = "";
+		
+		for(int i = 0; i < this.id; ++i) conteudo += this.livros[i].exibirLivro() + "\n";
+		
+		return conteudo;
+	}
 }
