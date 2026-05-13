@@ -20,6 +20,9 @@ public class Loja {
 					"2 - Listar produtos\n" +
 					"3 - Buscar produto\n" +
 					"4 - Excluir produto\n" +
+					"5 - Editar produto\n" +
+					"6 - Adicionar ao carrinho\n" +
+					"7 - Ver carrinho\n" +
 					"0 - Sair"));
 			
 			switch(opcao) {
@@ -57,6 +60,41 @@ public class Loja {
 				case 4:
 					busca = Integer.parseInt(JOptionPane.showInputDialog("Digite o código do produto:"));
 					genProd.excluirProduto(busca);
+					break;
+				case 5:
+					busca = Integer.parseInt(JOptionPane.showInputDialog("Digite o código do produto: "));
+					produto = genProd.buscarProduto(busca);
+					
+					if(produto == null) {
+						JOptionPane.showMessageDialog(null, "Produto não encontrado!");
+					} else {
+						nome = JOptionPane.showInputDialog("Digite o nome do produto:");
+						descricao = JOptionPane.showInputDialog("Digite a descricao do produto:");
+						preco = Double.parseDouble(JOptionPane.showInputDialog("Digite o preco do produto:"));
+						vencimento = JOptionPane.showInputDialog("Digite o vencimento do produto:");
+						quantidade = Integer.parseInt(JOptionPane.showInputDialog("Digite a quantidade do produto:"));
+						categoria = JOptionPane.showInputDialog("Digite a categoria do produto:");
+						genProd.atualizarProduto(busca, nome, preco, quantidade, vencimento, categoria, descricao);
+					}
+					break;
+				case 6:
+					busca = Integer.parseInt(JOptionPane.showInputDialog("Digite o código do produto: "));
+					produto = genProd.buscarProduto(busca);
+					
+					if(produto == null) {
+						JOptionPane.showMessageDialog(null, "Produto não encontrado!");
+					} else {
+						quantidade = Integer.parseInt(JOptionPane.showInputDialog("Digite a quantidade do produto:"));
+						if(quantidade > produto.getQuantidade()) {
+							JOptionPane.showMessageDialog(null, "Quantidade indisponível.");
+						} else {
+							genProd.adicionarCarrinho(produto, quantidade);
+						}
+					}
+					
+					break;
+				case 7:
+					JOptionPane.showMessageDialog(null, genProd.verCarrinho());
 					break;
 			}
 		}
