@@ -12,4 +12,11 @@ public class Gerenciador {
 		this.id = 0;
 		this.listaDeDesejos = "";
 	}
+	
+	public void adicionarLivro(Livro livro) {
+		if(this.id < this.tamanho) {
+			this.livros[this.id] = livro;
+			++this.id;
+		}
+	}
 }
