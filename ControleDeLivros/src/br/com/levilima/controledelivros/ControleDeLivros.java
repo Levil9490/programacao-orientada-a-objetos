@@ -25,6 +25,9 @@ public class ControleDeLivros {
 					JOptionPane.showMessageDialog(null, "Livro adicionado com sucesso!", "Sucesso!", 1);
 					
 					break;
+				case 2:
+					JOptionPane.showMessageDialog(null, gerenciador.listarLivros(), "Lista de livros", 1);
+					break;
 				case 0:
 					controle = false;
 					JOptionPane.showMessageDialog(null, "Saindo da aplicação...");
