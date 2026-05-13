@@ -41,4 +41,9 @@ public class Livro {
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
 	}
+	
+	public String exibirLivro() {
+		String conteudo = "Codigo: " + this.codigo + " Nome: " + this.nome + " Descrição: " + this.descricao + " Quantidade: " + this.quantidade;
+		return conteudo;
+	}
 }
