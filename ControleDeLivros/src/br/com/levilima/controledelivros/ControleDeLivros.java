@@ -22,6 +22,8 @@ public class ControleDeLivros {
 					Livro livro = new Livro(nome, descricao, quantidade);
 					gerenciador.adicionarLivro(livro);
 					
+					JOptionPane.showMessageDialog(null, "Livro adicionado com sucesso!", "Sucesso!", 1);
+					
 					break;
 				case 0:
 					controle = false;
