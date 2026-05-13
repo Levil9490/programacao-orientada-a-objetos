@@ -5,9 +5,11 @@ public class Livro {
 	private String nome, descricao;
 	
 	public Livro(String nome, String descricao, int quantidade) {
+		this.setCodigo(Gerenciador.CODIGO);
 		this.setNome(nome);
 		this.setDescricao(descricao);
 		this.setQuantidade(quantidade);
+		++Gerenciador.CODIGO;
 	}
 	
 	public int getCodigo() {
