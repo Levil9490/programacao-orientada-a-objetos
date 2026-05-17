@@ -46,4 +46,14 @@ public class Gerenciador {
 			}
 		}
 	}
+	
+	public void editarLivro(int codigo, String nome, String descricao, int quantidade) {
+		for(int i = 0; i < this.id; ++i) {
+			if(codigo == this.livros[i].getCodigo()) {
+				this.livros[i].setNome(nome);
+				this.livros[i].setDescricao(descricao);
+				this.livros[i].setQuantidade(quantidade);
+			}
+		}
+	}
 }
