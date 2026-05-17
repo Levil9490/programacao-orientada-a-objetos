@@ -30,7 +30,7 @@ public class ControleDeLivros {
 					JOptionPane.showMessageDialog(null, gerenciador.listarLivros(), "Lista de livros", 1);
 					break;
 				case 3:
-					busca = Integer.parseInt(JOptionPane.showInputDialog(null, "Digite o código do livro", "Buscar um livro", 1));
+					busca = Integer.parseInt(JOptionPane.showInputDialog(null, "Digite o código do livro:", "Buscar um livro", 1));
 					livro = gerenciador.buscarLivro(busca);
 					
 					if(gerenciador.buscarLivro(busca) == null) {
@@ -38,6 +38,13 @@ public class ControleDeLivros {
 					} else {
 						JOptionPane.showMessageDialog(null, livro.exibirLivro());
 					}
+					
+					break;
+				case 4:
+					busca = Integer.parseInt(JOptionPane.showInputDialog(null, "Digite o código do livro:"));
+					gerenciador.excluirLivro(busca);
+					
+					JOptionPane.showMessageDialog(null, "Livro excluído com sucesso!", "Sucesso!", 1);
 					
 					break;
 				case 0:
