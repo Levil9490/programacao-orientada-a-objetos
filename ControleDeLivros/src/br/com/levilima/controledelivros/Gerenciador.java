@@ -58,7 +58,7 @@ public class Gerenciador {
 	}
 	
 	public void adicionarAListaDeDesejos(Livro livro, int quantidade) {
-		this.listaDeDesejos += "Código: " + livro.getCodigo() + "\tNome: " + livro.getNome() + "\tDescrição: " + livro.getDescricao() + "\tQuantidade: " + livro.getQuantidade();
+		this.listaDeDesejos += "Código: " + livro.getCodigo() + " Nome: " + livro.getNome() + " Descrição: " + livro.getDescricao() + " Quantidade: " + livro.getQuantidade();
 	}
 	
 	public String verListaDeDesejos() {
