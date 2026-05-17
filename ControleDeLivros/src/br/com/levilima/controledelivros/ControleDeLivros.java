@@ -47,6 +47,20 @@ public class ControleDeLivros {
 					JOptionPane.showMessageDialog(null, "Livro excluído com sucesso!", "Sucesso!", 1);
 					
 					break;
+				case 5:
+					busca = Integer.parseInt(JOptionPane.showInputDialog(null, "Código do livro:", "Editar livro", 1));
+					livro = gerenciador.buscarLivro(busca);
+					
+					if(livro == null) {
+						JOptionPane.showMessageDialog(null, "Livro não encontrado!", "Erro!", 0);
+					} else {
+						nome = JOptionPane.showInputDialog(null, "Insira um novo nome para o livro:");
+						descricao = JOptionPane.showInputDialog(null, "Insira uma nova descrição para o livro:");
+						quantidade = Integer.parseInt(JOptionPane.showInputDialog(null, "Insira uma nova quantidade para o livro:"));
+						gerenciador.editarLivro(busca, nome, descricao, quantidade);
+					}
+					
+					break;
 				case 0:
 					controle = false;
 					JOptionPane.showMessageDialog(null, "Saindo da aplicação...");
