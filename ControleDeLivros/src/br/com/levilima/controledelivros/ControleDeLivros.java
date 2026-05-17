@@ -41,7 +41,7 @@ public class ControleDeLivros {
 					
 					break;
 				case 4:
-					busca = Integer.parseInt(JOptionPane.showInputDialog(null, "Digite o código do livro:"));
+					busca = Integer.parseInt(JOptionPane.showInputDialog(null, "Digite o código do livro:", "Excluir um livro", 1));
 					gerenciador.excluirLivro(busca);
 					
 					JOptionPane.showMessageDialog(null, "Livro excluído com sucesso!", "Sucesso!", 1);
