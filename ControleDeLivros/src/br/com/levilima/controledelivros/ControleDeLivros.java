@@ -6,7 +6,8 @@ public class ControleDeLivros {
 	public static void main(String[] args) {
 		boolean controle = true;
 		String nome, descricao;
-		int quantidade;
+		int quantidade, busca;
+		Livro livro;
 		
 		Gerenciador gerenciador = new Gerenciador(5);
 		
@@ -19,7 +20,7 @@ public class ControleDeLivros {
 					descricao = JOptionPane.showInputDialog(null, "Insira uma descrição para o livro!", "Descrição", 1);
 					quantidade = Integer.parseInt(JOptionPane.showInputDialog(null, "Insira uma quantidade!", "Quantidade", 1));
 					
-					Livro livro = new Livro(nome, descricao, quantidade);
+					livro = new Livro(nome, descricao, quantidade);
 					gerenciador.adicionarLivro(livro);
 					
 					JOptionPane.showMessageDialog(null, "Livro adicionado com sucesso!", "Sucesso!", 1);
@@ -27,6 +28,17 @@ public class ControleDeLivros {
 					break;
 				case 2:
 					JOptionPane.showMessageDialog(null, gerenciador.listarLivros(), "Lista de livros", 1);
+					break;
+				case 3:
+					busca = Integer.parseInt(JOptionPane.showInputDialog(null, "Digite o código do livro", "Buscar um livro", 1));
+					livro = gerenciador.buscarLivro(busca);
+					
+					if(gerenciador.buscarLivro(busca) == null) {
+						JOptionPane.showMessageDialog(null, "Livro não encontrado!", "Erro!", 0);
+					} else {
+						JOptionPane.showMessageDialog(null, livro.exibirLivro());
+					}
+					
 					break;
 				case 0:
 					controle = false;

@@ -27,4 +27,9 @@ public class Gerenciador {
 		
 		return conteudo;
 	}
+	
+	public Livro buscarLivro(int codigo) {
+		for(int i = 0; i < this.id; ++i) if(this.livros[i].getCodigo() == codigo) return this.livros[i];
+		return null;
+	}
 }
