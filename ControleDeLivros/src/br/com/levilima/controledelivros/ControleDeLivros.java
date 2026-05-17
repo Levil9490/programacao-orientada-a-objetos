@@ -61,6 +61,23 @@ public class ControleDeLivros {
 					}
 					
 					break;
+				case 6:
+					busca = Integer.parseInt(JOptionPane.showInputDialog(null, "Digite o código do livro:", "Adicionar um livro à lista de desejos", 1));
+					livro = gerenciador.buscarLivro(busca);
+					
+					if(livro == null) {
+						JOptionPane.showMessageDialog(null, "Livro não encontrado!", "Erro!", 0);
+					} else {
+						quantidade = Integer.parseInt(JOptionPane.showInputDialog(null, "Digite a quantidade que você deseja deste título:", "Digite a quantidade desejada", 1));
+						if(quantidade > livro.getQuantidade()) {
+							JOptionPane.showMessageDialog(null, "Quantidade indisponível!", "Erro!", 1);
+						} else {
+							gerenciador.adicionarAListaDeDesejos(livro, quantidade);
+							JOptionPane.showMessageDialog(null, "Livro adicionado com sucesso à lista de desejos!", "Sucesso!", 1);
+						}
+					}
+					
+					break;
 				case 0:
 					controle = false;
 					JOptionPane.showMessageDialog(null, "Saindo da aplicação...");
