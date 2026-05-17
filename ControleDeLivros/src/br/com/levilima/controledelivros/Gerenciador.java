@@ -32,4 +32,18 @@ public class Gerenciador {
 		for(int i = 0; i < this.id; ++i) if(this.livros[i].getCodigo() == codigo) return this.livros[i];
 		return null;
 	}
+	
+	public void excluirLivro(int codigo) {
+		for(int i = 0; i < this.id; ++i) {
+			if(this.livros[i].getCodigo() == codigo) {
+				if(i < (this.id - 1)) {
+					for(int j = i; j < (this.id - 1); ++j) {
+						this.livros[j] = this.livros[j + 1];
+					}
+					--this.id;
+					return;
+				}
+			}
+		}
+	}
 }
