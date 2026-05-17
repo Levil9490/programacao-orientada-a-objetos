@@ -78,6 +78,9 @@ public class ControleDeLivros {
 					}
 					
 					break;
+				case 7:
+					JOptionPane.showMessageDialog(null, gerenciador.verListaDeDesejos(), "Lista de desejos", 1);
+					break;
 				case 0:
 					controle = false;
 					JOptionPane.showMessageDialog(null, "Saindo da aplicação...");
